@@ -1,57 +1,110 @@
 import Header from '@/components/Header';
-import Image from 'next/image';
+import Countdown from '@/components/Countdown';
 
-export default function SchedulePage() {
+export default function HomePage() {
   return (
     <>
-      <Header title="전체 일정" />
-      <main style={{ padding: '16px' }}>
+      <Header />
+      <main style={{ minHeight: 'calc(100vh - 52px)', display: 'flex', flexDirection: 'column' }}>
 
-        {/* 날짜 안내 */}
+        {/* 히어로 섹션 - 이미지 배경 */}
         <div style={{
-          marginBottom: 16,
-          padding: '12px 14px',
-          background: 'rgba(74,222,128,0.06)',
-          border: '1px solid rgba(74,222,128,0.2)',
-          borderRadius: 10,
-        }}>
-          <div style={{ fontSize: 12, color: '#4ade80', fontWeight: 600, marginBottom: 2 }}>
-            ✈ 현지 일정
-          </div>
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>
-            2026년 7월 11일(토) ~ 15일(수)
-          </div>
-        </div>
-
-        {/* 일정표 이미지 */}
-        <div style={{
-          borderRadius: 12,
+          flex: 1,
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: 'calc(100vh - 52px)',
           overflow: 'hidden',
-          border: '1px solid rgba(255,255,255,0.08)',
         }}>
-          <Image
-            src="/schedule.png"
-            alt="라오스 아웃리치 일정표"
-            width={800}
-            height={600}
-            style={{
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-            }}
-          />
+          {/* 배경 이미지 */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/prayer-card.jpeg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
+          }} />
+
+          {/* 다크 오버레이 */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.92) 100%)',
+          }} />
+
+          {/* 콘텐츠 */}
+          <div style={{
+            position: 'relative', zIndex: 1,
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center',
+            width: '100%',
+            padding: '48px 28px 40px',
+            gap: 28,
+          }}>
+
+            {/* 타이틀 */}
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.2em', marginBottom: 10 }}>
+                2026
+              </div>
+              <h1 style={{
+                fontSize: 28, fontWeight: 800, color: '#fff',
+                lineHeight: 1.25, letterSpacing: '-0.01em', marginBottom: 6,
+                textShadow: '0 2px 12px rgba(0,0,0,0.5)',
+              }}>
+                POD CHURCH<br />라오스 아웃리치
+              </h1>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.12em' }}>
+                LAND OF SHALOM
+              </div>
+            </div>
+
+            {/* 카운트다운 */}
+            <Countdown />
+
+            {/* 출발 날짜 */}
+            <div style={{
+              fontSize: 11, color: 'rgba(255,255,255,0.3)',
+              display: 'flex', alignItems: 'center', gap: 8,
+            }}>
+              <span>✈</span>
+              <span>2026년 7월 11일 라오스 출발</span>
+            </div>
+          </div>
         </div>
 
-        {/* 핀치줌 안내 */}
-        <div style={{
-          marginTop: 10,
-          textAlign: 'center',
-          fontSize: 11,
-          color: 'rgba(255,255,255,0.25)',
+        {/* 하단 네비 바 */}
+        <nav style={{
+          display: 'flex',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          background: 'rgba(10,22,40,0.95)',
+          position: 'sticky', bottom: 0,
         }}>
-          두 손가락으로 확대해서 볼 수 있어요
-        </div>
-
+          {[
+            { href: '/members', icon: '♟', label: '팀원' },
+            { href: '/teams', icon: '◈', label: '사역팀' },
+            { href: '/schedule', icon: '◷', label: '일정' },
+            { href: '/missions', icon: '✓', label: '미션' },
+          ].map((item) => (
+            
+              key={item.href}
+              href={item.href}
+              style={{
+                flex: 1, display: 'flex', flexDirection: 'column',
+                alignItems: 'center', justifyContent: 'center',
+                padding: '10px 4px 12px',
+                color: 'rgba(255,255,255,0.4)',
+                textDecoration: 'none', fontSize: 10, gap: 4,
+              }}
+            >
+              <span style={{ fontSize: 18 }}>{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </main>
     </>
   );

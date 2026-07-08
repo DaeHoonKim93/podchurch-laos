@@ -7,80 +7,73 @@ export default function HomePage() {
       <Header />
       <main style={{ minHeight: 'calc(100vh - 52px)', display: 'flex', flexDirection: 'column' }}>
 
-        {/* 히어로 섹션 */}
         <div style={{
-          flex: 1, display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          padding: '48px 28px 40px',
-          gap: 32,
+          flex: 1,
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: 'calc(100vh - 52px)',
+          overflow: 'hidden',
         }}>
-          {/* 크로스 아이콘 */}
           <div style={{
-            width: 52, height: 52,
-            border: '1.5px solid rgba(255,255,255,0.2)',
-            borderRadius: '50%',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <rect x="9" y="2" width="4" height="18" rx="2" fill="rgba(255,255,255,0.7)" />
-              <rect x="2" y="7" width="18" height="4" rx="2" fill="rgba(255,255,255,0.7)" />
-            </svg>
-          </div>
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/prayer-card.jpeg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
+          }} />
 
-          {/* 타이틀 */}
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.2em', marginBottom: 10 }}>
-              2026
-            </div>
-            <h1 style={{
-              fontSize: 26, fontWeight: 800, color: '#fff',
-              lineHeight: 1.25, letterSpacing: '-0.01em', marginBottom: 6,
-            }}>
-              POD CHURCH<br />라오스 아웃리치
-            </h1>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>
-              LAOS OUTREACH
-            </div>
-          </div>
-
-          {/* 주제 말씀 */}
           <div style={{
-            maxWidth: 300, textAlign: 'center',
-            padding: '20px 20px',
-            border: '1px solid rgba(255,255,255,0.07)',
-            borderRadius: 14,
-            background: 'rgba(255,255,255,0.02)',
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.92) 100%)',
+          }} />
+
+          <div style={{
+            position: 'relative', zIndex: 1,
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center',
+            width: '100%',
+            padding: '48px 28px 40px',
+            gap: 28,
           }}>
+
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.2em', marginBottom: 10 }}>
+                2026
+              </div>
+              <h1 style={{
+                fontSize: 28, fontWeight: 800, color: '#fff',
+                lineHeight: 1.25, letterSpacing: '-0.01em', marginBottom: 6,
+                textShadow: '0 2px 12px rgba(0,0,0,0.5)',
+              }}>
+                POD CHURCH<br />라오스 아웃리치
+              </h1>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.12em' }}>
+                LAND OF SHALOM
+              </div>
+            </div>
+
+            <Countdown />
+
             <div style={{
-              fontSize: 14, color: 'rgba(255,255,255,0.75)',
-              lineHeight: 1.8, fontStyle: 'italic', marginBottom: 12,
-              wordBreak: 'keep-all',
+              fontSize: 11, color: 'rgba(255,255,255,0.3)',
+              display: 'flex', alignItems: 'center', gap: 8,
             }}>
-              "너희 중 한 사람이 천 명을 쫓으리니 이는 너희의 하나님 여호와 그가 너희를 위하여 싸우심이라"
+              <span>✈</span>
+              <span>2026년 7월 11일 라오스 출발</span>
             </div>
-            <div style={{ fontSize: 11, color: '#4ade80', fontWeight: 600, letterSpacing: '0.05em' }}>
-              여호수아 23:10
-            </div>
-          </div>
-
-          {/* 카운트다운 */}
-          <Countdown />
-
-          {/* 출발 날짜 */}
-          <div style={{
-            fontSize: 11, color: 'rgba(255,255,255,0.2)',
-            display: 'flex', alignItems: 'center', gap: 8,
-          }}>
-            <span>✈</span>
-            <span>2026년 7월 11일 라오스 출발</span>
           </div>
         </div>
 
-        {/* 하단 네비 바 */}
         <nav style={{
           display: 'flex',
           borderTop: '1px solid rgba(255,255,255,0.06)',
           background: 'rgba(10,22,40,0.95)',
+          position: 'sticky', bottom: 0,
         }}>
           {[
             { href: '/members', icon: '♟', label: '팀원' },
