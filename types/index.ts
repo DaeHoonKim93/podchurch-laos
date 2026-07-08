@@ -29,16 +29,3 @@ export interface SchedulePhase {
   color: string;
   items: ScheduleItem[];
 }
-
-export interface Mission {
-  id: string;
-  type: 'bible' | 'exercise' | 'prayer';
-  title: string;
-  desc: string;
-}
-
-export interface MissionWeek {
-  week: number;
-  label: string;
-  missions: Mission[];
-}

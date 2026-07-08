@@ -79,7 +79,7 @@ export default function HomePage() {
             { href: '/members', icon: '♟', label: '팀원' },
             { href: '/teams', icon: '◈', label: '사역팀' },
             { href: '/schedule', icon: '◷', label: '일정' },
-            { href: '/missions', icon: '✓', label: '미션' },
+            { href: '/prayers', icon: '✿', label: '기도' },
           ].map((item) => (
             <a
               key={item.href}
