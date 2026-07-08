@@ -60,9 +60,9 @@ function PrayerPopup({ prayer, onClose }: { prayer: Prayer; onClose: () => void 
             width: 40, height: 40, borderRadius: '50%',
             background: 'rgba(74,222,128,0.12)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 16, color: '#4ade80', flexShrink: 0,
+            fontSize: 16, flexShrink: 0,
           }}>
-            ✿
+            🙏
           </div>
           <div>
             <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 2 }}>
@@ -164,7 +164,7 @@ export default function PrayersClient({ data }: { data: PrayersData }) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-              <span style={{ fontSize: 13, color: '#4ade80' }}>✿</span>
+              <span style={{ fontSize: 13 }}>🙏</span>
               <span style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>
                 {prayer.name}
               </span>
