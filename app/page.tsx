@@ -14,7 +14,6 @@ export default function HomePage() {
           padding: '48px 28px 40px',
           gap: 32,
         }}>
-
           {/* 크로스 아이콘 */}
           <div style={{
             width: 52, height: 52,
