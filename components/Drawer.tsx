@@ -15,6 +15,8 @@ const menuItems = [
   { href: '/teams', label: '사역팀 소개', icon: '◈' },
   { href: '/schedule', label: '전체 일정', icon: '◷' },
   { href: '/prayers', label: '우리의 기도', icon: '🙏' },
+  { href: '/scores', label: '예배 악보', icon: '♪' },
+
 ];
 
 export default function Drawer({ isOpen, onClose }: DrawerProps) {
