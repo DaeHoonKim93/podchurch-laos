@@ -12,11 +12,9 @@ interface DrawerProps {
 const menuItems = [
   { href: '/', label: '홈', icon: '⌂' },
   { href: '/members', label: '팀원 소개', icon: '♟' },
-  { href: '/teams', label: '사역팀 소개', icon: '◈' },
-  { href: '/schedule', label: '전체 일정', icon: '◷' },
-  { href: '/prayers', label: '우리의 기도', icon: '🙏' },
+  { href: '/prayers', label: '우리의 기도', icon: '✿' },
   { href: '/scores', label: '예배 악보', icon: '♪' },
-
+  { href: '/schedule', label: '전체 일정', icon: '◷' },
 ];
 
 export default function Drawer({ isOpen, onClose }: DrawerProps) {
@@ -56,7 +54,6 @@ export default function Drawer({ isOpen, onClose }: DrawerProps) {
           transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)',
           display: 'flex', flexDirection: 'column',
-          padding: '0',
         }}
       >
         {/* Header */}
