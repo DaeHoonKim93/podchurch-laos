@@ -13,8 +13,7 @@ export interface Team {
   id: number;
   name: string;
   color: string;
-  description: string;
-  role: string;
+  leader: string;
   members: string[];
 }
 
