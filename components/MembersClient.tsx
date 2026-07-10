@@ -52,7 +52,7 @@ function DetailRow({ icon, label, value }: { icon: string; label: string; value:
         <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', marginBottom: 4, letterSpacing: '0.05em' }}>
           {label}
         </div>
-        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.82)', lineHeight: 1.7 }}>
+        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.82)', lineHeight: 1.7, whiteSpace: 'pre-line' }}>
           {value}
         </div>
       </div>
